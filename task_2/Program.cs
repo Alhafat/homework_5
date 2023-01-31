@@ -18,16 +18,17 @@ int[] GetArray ()
     return array;
 }
 
-int findNumbers(int[] numbers, int summ)
+int findNumbers(int[] numbers)
 {
-    for (int i =1; i <numbers.Length; i++)    
+    int summ=0;
+    for (int i =1; i <numbers.Length; i+=2)    
     {
-        summ+=numbers[i];
+        summ=summ+numbers[i];
     }
     return summ;
 }
 
 int[] numbers=GetArray();
 System.Console.WriteLine(string.Join(", ", numbers));
-int result=findNumbers(numbers, summ);
+int result=findNumbers(numbers);
 System.Console.WriteLine(string.Join(", ", result));
